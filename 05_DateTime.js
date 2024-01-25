@@ -3,6 +3,7 @@
 let myDate=new Date()
 console.log(myDate) //2024-01-25T10:15:25.240Z
 console.log(typeof myDate) //Object
+
 console.log(myDate.toString()) //Thu Jan 25 2024 10:15:25 GMT+0000 (Coordinated Universal Time)
 console.log(myDate.toDateString()) //Thu Jan 25 2024
 console.log(myDate.toTimeString()) //10:18:16 GMT+0000 (Coordinated Universal Time)
@@ -43,9 +44,30 @@ console.log(myDate.toLocaleString('default',{
     weekday:'long',
     day : 'numeric' ,
     month: 'long',
-    year: '2-digit',
+    year: 'numeric',
     /*year:'numeric'*/
 })) //Thursday, January 25, 24
+
+
 console.log(new Date(8.64e15).toString()); //Sat Sep 13 275760 00:00:00 GMT+0000 (Coordinated Universal Time)
 
- 
+let myDate1 = new Date();
+let jsonString = JSON.stringify({ date: myDate1.toJSON() });
+console.log(jsonString);
+
+//Thu, Jan 25, 24
+console.log(myDate.toLocaleString('default',{
+    day : 'numeric',
+    weekday : 'short',
+    month :'short',
+    year:'2-digit'
+}))
+
+/**
+ * //dateStyle : 'long',
+    day : 'numeric',
+    weekday : 'short',
+    //timeStyle : 'medium',
+    month :'short',
+    year:'2-digit'
+ */
